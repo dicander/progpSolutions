@@ -41,4 +41,8 @@ oneTimePad plaintext key =
 oneTimePadAlt::String->String->String
 oneTimePadAlt w k = map (\x -> chr((ord (fst x) + (ord (snd x))) `mod` 128)) $zip w k
 
+oneTimePadStudentSolution::String->String->String
+oneTimePadStudentSolution =
+    zipWith (\a b -> chr((ord a + ord b) `mod` 128))
+
 
